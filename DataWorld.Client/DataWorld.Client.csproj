@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461;net472</TargetFrameworks>
 	
-	<Version>1.0.$(VersionSuffix)</Version>
+	<Version>1.0$(VersionSuffix)</Version>
 	
 	<Authors>Chris Meller</Authors>
 	<Description>A .NET Standard client for interacting with the DataWorld API.</Description>
