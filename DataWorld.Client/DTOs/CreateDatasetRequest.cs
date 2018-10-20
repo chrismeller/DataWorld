@@ -4,7 +4,6 @@ namespace DataWorld.Client.DTOs
 {
     public class CreateDatasetRequest
     {
-        public string Id { get; set; }
         public string Description { get; set; }
         public string License { get; set; }
         public string Summary { get; set; }

@@ -5,7 +5,6 @@ namespace DataWorld.Client.DTOs
 {
     public class CreateProjectRequest
     {
-        public string Id { get; set; }
         public string License { get; set; }
         public string Objective { get; set; }
         public string Summary { get; set; }
