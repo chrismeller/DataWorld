@@ -106,6 +106,23 @@ namespace DataWorld.Client
             }
         }
 
+        public async Task<MessageResponse> CreateOrReplaceDataset(string owner, string datasetId, CreateDatasetRequest dataset)
+        {
+            using (var http = CreateClient())
+            {
+                var url = $"datasets/{owner}/{datasetId}";
+
+                var jsonBody = JsonConvert.SerializeObject(dataset, _serializerSettings);
+                var postContent = new StringContent(jsonBody, Encoding.UTF8, "application/json");
+                var response = await http.PutAsync(url, postContent);
+                var content = await response.Content.ReadAsStringAsync();
+
+                var result = JsonConvert.DeserializeObject<MessageResponse>(content);
+
+                return result;
+            }
+        }
+
         public async Task<CreateProjectResponse> CreateProject(string owner, CreateProjectRequest project)
         {
             using (var http = CreateClient())
