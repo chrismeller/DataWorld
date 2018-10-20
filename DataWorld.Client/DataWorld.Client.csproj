@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461;net472</TargetFrameworks>
+	
+	<Version>1.0.$(VersionSuffix)</Version>
+	
+	<Authors>Chris Meller</Authors>
+	<Description>A .NET Standard client for interacting with the DataWorld API.</Description>
+	<PackageProjectUrl>https://github.com/chrismeller/DataWorld</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="newtonsoft.json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+</Project>
